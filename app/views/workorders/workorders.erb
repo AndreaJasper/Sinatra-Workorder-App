@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row mb-5">
+    <div class="col-6">
+      <h1> Welcome, <%= current_user.username %></h1>
+    </div>
+    <div class="col-6">
+      <a href="workorders/new" class="btn btn-info text-right mr-3">Create Workorder</a>
+      <a href="/logout" class="btn btn-dark text-right">Logout</a>
+    </div>
+  </div>
+  <h2> Workorders </h2>
+    <% @workorders.each do |workorder| %>
+      <div>
+        <%= workorder.name %>
+      </div>
+    <% end %>
+
+</div>
+

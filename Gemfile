@@ -13,7 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "tux"
 
 group :test do
-  gem 'rspec'
+  gem 'rspec', '~> 3.9.0'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner'
