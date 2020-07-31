@@ -210,8 +210,8 @@ describe ApplicationController do
         click_button 'submit'
 
         user = User.find_by(:username => "becky567")
-        workorder = workorder.find_by(:content => "workorder!!!")
-        expect(workorder).to be_instance_of(workorder)
+        workorder = Workorder.find_by(:content => "workorder!!!")
+        expect(workorder).to be_instance_of(Workorder)
         expect(workorder.user_id).to eq(user.id)
         expect(page.status_code).to eq(200)
       end
@@ -233,8 +233,8 @@ describe ApplicationController do
 
         user = User.find_by(:id=> user.id)
         user2 = User.find_by(:id => user2.id)
-        workorder = workorder.find_by(:content => "workorder!!!")
-        expect(workorder).to be_instance_of(workorder)
+        workorder = Workorder.find_by(:content => "workorder!!!")
+        expect(workorder).to be_instance_of(Workorder)
         expect(workorder.user_id).to eq(user.id)
         expect(workorder.user_id).not_to eq(user2.id)
       end
@@ -253,7 +253,7 @@ describe ApplicationController do
         fill_in(:content, :with => "")
         click_button 'submit'
 
-        expect(workorder.find_by(:content => "")).to eq(nil)
+        expect(Workorder.find_by(:content => "")).to eq(nil)
         expect(page.current_path).to eq("/workorders/new")
       end
     end
@@ -281,9 +281,9 @@ describe ApplicationController do
 
         visit "/workorders/#{workorder.id}"
         expect(page.status_code).to eq(200)
-        expect(page.body).to include("Delete workorder")
+        expect(page.body).to include("Delete Workorder")
         expect(page.body).to include(workorder.content)
-        expect(page.body).to include("Edit workorder")
+        expect(page.body).to include("Edit Workorder")
       end
     end
 
@@ -325,9 +325,9 @@ describe ApplicationController do
         fill_in(:password, :with => "kittens")
         click_button 'submit'
         visit "workorders/#{workorder2.id}"
-        click_on "Edit workorder"
+        click_on "Edit Workorder"
         expect(page.status_code).to eq(200)
-        expect(workorder.find_by(:content => "look at this workorder")).to be_instance_of(workorder)
+        expect(Workorder.find_by(:content => "look at this workorder")).to be_instance_of(Workorder)
         expect(page.current_path).to include('/workorders')
       end
 
@@ -344,8 +344,8 @@ describe ApplicationController do
         fill_in(:content, :with => "i love workorders")
 
         click_button 'submit'
-        expect(workorder.find_by(:content => "i love workorders")).to be_instance_of(workorder)
-        expect(workorder.find_by(:content => "workorder!")).to eq(nil)
+        expect(Workorder.find_by(:content => "i love workorders")).to be_instance_of(Workorder)
+        expect(Workorder.find_by(:content => "workorder!")).to eq(nil)
         expect(page.status_code).to eq(200)
       end
 
@@ -362,7 +362,7 @@ describe ApplicationController do
         fill_in(:content, :with => "")
 
         click_button 'submit'
-        expect(workorder.find_by(:content => "i love workorders")).to be(nil)
+        expect(Workorder.find_by(:content => "i love workorders")).to be(nil)
         expect(page.current_path).to eq("/workorders/1/edit")
       end
     end
@@ -386,7 +386,7 @@ describe ApplicationController do
         fill_in(:password, :with => "kittens")
         click_button 'submit'
         visit 'workorders/1'
-        click_button "Delete workorder"
+        click_button "Delete Workorder"
         expect(page.status_code).to eq(200)
         expect(workorder.find_by(:content => "workorder!")).to eq(nil)
       end
