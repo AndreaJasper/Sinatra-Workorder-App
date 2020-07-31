@@ -1,28 +1,7 @@
-<div class="container">
-  <h2>Create a New Workorder</h2>
-  <form action="/workorders" method="POST">
-    <p>Name: <input type="text" name="name"></p>
-    <b><p>Asset:</p></b>
-        <select id="asset" name="asset">
-            <option value="filler1">Filler 1</option>
-            <option value="filler2">Filler 2</option>
-            <option value="homogenizer">Homogenizer</option>
-            <option value="case_packer">Case Packer</option>
-        </select>
-    <br>
-        <br>
-    <b><p>Procedures:</p></b>
-        <input type="checkbox" id="oil" name="oil" value="Oil Change">
-        <label>Oil change</label>
-        <br>
-        <input type="checkbox" id="belts" name="belts" value="Belts">
-        <label>Belts</label>
-        <br>
-        <input type="checkbox" id="bearings" name="bearings" value="Change bearings">
-        <label>Change bearings</label>
-        <br>
-        
-    <input class="btn btn-primary mt-2" type="submit" value="Submit Workorder">
-  </form>
+<h2>Create a new Workorder</h2>
 
-</div>
+
+  <form action="/workorders" method="post">
+    <input type="text" name="content" id="content">
+    <input type="submit" value="Workorder!" id="submit">
+  </form>
