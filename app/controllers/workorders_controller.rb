@@ -58,7 +58,7 @@ class WorkordersController < ApplicationController
   patch '/workorders/:id' do
     if logged_in?
       if params[:content] == ""
-        redirect to "/workorders/#{params[:id]}/edit"
+        redirect to "/workorders/#{@workorder[:id]}/edit"
       else
         @workorder = Workorder.find_by_id(params[:id])
         if @workorder && @workorder.user == current_user
