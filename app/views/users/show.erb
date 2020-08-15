@@ -1,0 +1,9 @@
+  
+<h2>Welcome, <%= @user.username %></h2>
+
+
+    <% @user.workorders.each do |workorder| %>
+        <div>
+            <p><a href="/workorders/<%= workorder.id" %></a><%= workorder.content %></p>
+        </div>
+<% end %>

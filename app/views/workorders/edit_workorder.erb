@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h2>Edit Your Workorder</h2>
+
+<form action="/workorders/<%= @workorder.id %>" method="POST">
+<br>
+<input type="hidden" id="hidden" name="_method" value="patch">
+  <p><b>Edit Workorder: </b></p>
+  <textarea name="content" id="wokroder_content" rows="10" cols="30"><%= @workorder.content %></textarea>
+<br>
+<br>
+  <input type="submit" value="Update" id="submit">
+</form>
+
+</div>

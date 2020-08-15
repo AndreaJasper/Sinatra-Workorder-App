@@ -1,0 +1,17 @@
+<div class="container mt-5 border">
+    <div class="my-5 text-center">
+          
+        <h1>Please create your account</h1>
+
+        <% unless locals.empty? %>
+        <%= message %>
+        <% end %>
+
+        <form action="/signup" method="POST">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="text" name="email" id="email" placeholder="Email">
+            <input type="submit" value="Sign Up" id="submit">
+        </form>
+    </div>
+</div>
