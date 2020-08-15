@@ -6,7 +6,7 @@ describe ApplicationController do
     it 'loads the homepage' do
       get '/'
       expect(last_response.status).to eq(200)
-      expect(last_response.body).to include("Welcome to Work Order Management")
+      expect(last_response.body).to include("Welcome to Workorder")
     end
   end
 
@@ -17,7 +17,7 @@ describe ApplicationController do
       expect(last_response.status).to eq(200)
     end
 
-    it 'signup directs user to twitter index' do
+    it 'signup directs user to workorder index' do
       params = {
         :username => "skittles123",
         :email => "skittles@aol.com",
@@ -144,12 +144,12 @@ describe ApplicationController do
   describe 'user show page' do
     it 'shows all a single users workorders' do
       user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-      workorder1 = Workorder.create(:content => "workorder!", :user_id => user.id)
-      workorder2 = Workorder.create(:content => "work work work", :user_id => user.id)
+      workorder1 = Workorder.create(:content => "workorders!", :user_id => user.id)
+      workorder2 = Workorder.create(:content => "workorder workorder workorder", :user_id => user.id)
       get "/users/#{user.slug}"
 
-      expect(last_response.body).to include("workorder!")
-      expect(last_response.body).to include("work work work")
+      expect(last_response.body).to include("workorders!")
+      expect(last_response.body).to include("workorder workorder workorder")
 
     end
   end
@@ -158,7 +158,7 @@ describe ApplicationController do
     context 'logged in' do
       it 'lets a user view the workorders index if logged in' do
         user1 = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder1 = Workorder.create(:content => "workorder!", :user_id => user1.id)
+        workorder1 = Workorder.create(:content => "workorders!", :user_id => user1.id)
 
         user2 = User.create(:username => "silverstallion", :email => "silver@aol.com", :password => "horses")
         workorder2 = Workorder.create(:content => "look at this workorder", :user_id => user2.id)
@@ -206,11 +206,11 @@ describe ApplicationController do
         click_button 'submit'
 
         visit '/workorders/new'
-        fill_in(:content, :with => "workorder!!!")
+        fill_in(:content, :with => "workorders!!!")
         click_button 'submit'
 
         user = User.find_by(:username => "becky567")
-        workorder = Workorder.find_by(:content => "workorder!!!")
+        workorder = Workorder.find_by(:content => "workorders!!!")
         expect(workorder).to be_instance_of(Workorder)
         expect(workorder.user_id).to eq(user.id)
         expect(page.status_code).to eq(200)
@@ -228,12 +228,12 @@ describe ApplicationController do
 
         visit '/workorders/new'
 
-        fill_in(:content, :with => "workorder!!!")
+        fill_in(:content, :with => "workorders!!!")
         click_button 'submit'
 
         user = User.find_by(:id=> user.id)
         user2 = User.find_by(:id => user2.id)
-        workorder = Workorder.find_by(:content => "workorder!!!")
+        workorder = Workorder.find_by(:content => "workorders!!!")
         expect(workorder).to be_instance_of(Workorder)
         expect(workorder.user_id).to eq(user.id)
         expect(workorder.user_id).not_to eq(user2.id)
@@ -271,7 +271,7 @@ describe ApplicationController do
       it 'displays a single workorder' do
 
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "i am a boss at workorder", :user_id => user.id)
+        workorder = Workorder.create(:content => "i am a boss at workorders", :user_id => user.id)
 
         visit '/login'
 
@@ -290,7 +290,7 @@ describe ApplicationController do
     context 'logged out' do
       it 'does not let a user view a workorder' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "i am a boss at workorder", :user_id => user.id)
+        workorder = Workorder.create(:content => "i am a boss at workorders", :user_id => user.id)
         get "/workorders/#{workorder.id}"
         expect(last_response.location).to include("/login")
       end
@@ -301,7 +301,7 @@ describe ApplicationController do
     context "logged in" do
       it 'lets a user view workorder edit form if they are logged in' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "workorder!", :user_id => user.id)
+        workorder = Workorder.create(:content => "workorders!", :user_id => user.id)
         visit '/login'
 
         fill_in(:username, :with => "becky567")
@@ -314,7 +314,7 @@ describe ApplicationController do
 
       it 'does not let a user edit a workorder they did not create' do
         user1 = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder1 = Workorder.create(:content => "workorder!", :user_id => user1.id)
+        workorder1 = Workorder.create(:content => "workorders!", :user_id => user1.id)
 
         user2 = User.create(:username => "silverstallion", :email => "silver@aol.com", :password => "horses")
         workorder2 = Workorder.create(:content => "look at this workorder", :user_id => user2.id)
@@ -333,7 +333,7 @@ describe ApplicationController do
 
       it 'lets a user edit their own workorder if they are logged in' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "workorder!", :user_id => 1)
+        workorder = Workorder.create(:content => "workorders!", :user_id => 1)
         visit '/login'
 
         fill_in(:username, :with => "becky567")
@@ -345,13 +345,13 @@ describe ApplicationController do
 
         click_button 'submit'
         expect(Workorder.find_by(:content => "i love workorders")).to be_instance_of(Workorder)
-        expect(Workorder.find_by(:content => "workorder!")).to eq(nil)
+        expect(Workorder.find_by(:content => "workorders!")).to eq(nil)
         expect(page.status_code).to eq(200)
       end
 
       it 'does not let a user edit a text with blank content' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "workorder!", :user_id => 1)
+        workorder = Workorder.create(:content => "workorders!", :user_id => 1)
         visit '/login'
 
         fill_in(:username, :with => "becky567")
@@ -379,7 +379,7 @@ describe ApplicationController do
     context "logged in" do
       it 'lets a user delete their own workorder if they are logged in' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder = Workorder.create(:content => "workorder!", :user_id => 1)
+        workorder = Workorder.create(:content => "workorders!", :user_id => 1)
         visit '/login'
 
         fill_in(:username, :with => "becky567")
@@ -388,12 +388,12 @@ describe ApplicationController do
         visit 'workorders/1'
         click_button "Delete Workorder"
         expect(page.status_code).to eq(200)
-        expect(workorder.find_by(:content => "workorder!")).to eq(nil)
+        expect(Workorder.find_by(:content => "workorders!")).to eq(nil)
       end
 
       it 'does not let a user delete a workorder they did not create' do
         user1 = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
-        workorder1 = Workorder.create(:content => "workorder!", :user_id => user1.id)
+        workorder1 = Workorder.create(:content => "workorders!", :user_id => user1.id)
 
         user2 = User.create(:username => "silverstallion", :email => "silver@aol.com", :password => "horses")
         workorder2 = Workorder.create(:content => "look at this workorder", :user_id => user2.id)
@@ -406,7 +406,7 @@ describe ApplicationController do
         visit "workorders/#{workorder2.id}"
         click_button "Delete Workorder"
         expect(page.status_code).to eq(200)
-        expect(workorder.find_by(:content => "look at this workorder")).to be_instance_of(workorder)
+        expect(Workorder.find_by(:content => "look at this workorder")).to be_instance_of(Workorder)
         expect(page.current_path).to include('/workorders')
       end
     end

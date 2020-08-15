@@ -1,3 +1,0 @@
-class ProceduresController < ApplicationController
-
-end

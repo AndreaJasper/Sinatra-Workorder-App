@@ -1,12 +1,8 @@
-<div class="container mt-5">
-    
-        <p><%= @workorder.content %></p>
+<p><%= @workorder.content %></p>
 
-    <form method="POST" action="/workorders/<%=@workorder.id%>/delete">
-        <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete Workorder">
-    </form>
-<br>
-    <a href="/workorders/<%=@workorder.id%>/edit" class="btn btn-primary">Edit Workorder </a>
-    
-</div>
+<form method="POST" action="/workorders/<%=@workorder.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Workorder">
+</form>
+
+<a href="/workorders/<%=@workorder.id%>/edit">Edit Workorder </a>
