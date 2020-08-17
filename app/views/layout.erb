@@ -1,18 +1,23 @@
 <!doctype html>
 <html>
   <head>
-    <title>Workorder Tracking</title>
-    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <title>Workorders</title>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
 
     <div class="container">
-      
-      <%= yield %>
+      <div class="row">
+        <div class="frame">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
+
+    
 
     <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
