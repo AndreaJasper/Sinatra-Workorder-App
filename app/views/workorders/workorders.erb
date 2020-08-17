@@ -1,8 +1,20 @@
-<p> Welcome, <%= current_user.username %></p>
-<h2> Workorders </h2>
+<div class="col-sm-12">
+  <div class="content ml-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <p> Welcome, <%= current_user.username %></p>
+      </div>
+      <div class="col-sm-6">
+        <a class="btn secondary-btn" href="/workorders/new">Create Workorder</a>
+      </div>
+    </div>
+    <h2 class="mb-5"> Workorders </h2>
 
-<% @workorders.each do |workorder| %>
-  <div>
-    <%= workorder.content %>
-  </div>
-<% end %>
+    <% @workorders.each do |workorder| %>
+      <div>
+        <%= workorder.content %>
+      </div>
+    <% end %>
+    </div>
+
+</div>
