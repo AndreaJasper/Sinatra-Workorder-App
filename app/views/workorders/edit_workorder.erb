@@ -1,9 +1,13 @@
-<h2>Edit Your Workorder</h2>
+<div class="col-sm-12">
+  <div class="content ml-5">
+    <h2 class="mb-5">Edit Your Workorder</h2>
 
-<form action="/workorders/<%= @workorder.id %>" method="POST">
-<input type="hidden" id="hidden" name="_method" value="patch">
-  <h3>Edit Workorder: <input type="text" name="content" id="workorder_content" value="<%= @workorder.content %>"><br></h3>
-  
+    <form action="/workorders/<%= @workorder.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+      <h3>Edit Workorder: <input type="text" name="content" id="workorder_content" value="<%= @workorder.content %>"><br></h3>
+      
 
-  <input type="submit" value="Workorder!" id="submit">
-</form>
+      <input type="submit" value="Workorder!" id="submit">
+    </form>
+  </div>
+</div>

@@ -1,8 +1,13 @@
-<h2>Welcome, <%= @user.username %></h2>
+<div class="col-sm-12">
+    <div class="content ml-5">
+
+        <h2 class="mb-5">Welcome, <%= @user.username %></h2>
 
 
-    <% @user.workorders.each do |workorder| %>
-        <div>
-            <p><a href="/workorders/<%= workorder.id %>"></a><%= workorder.content %></p>
-        </div>
-<% end %>
+        <% @user.workorders.each do |workorder| %>
+            <div>
+                <p><a href="/workorders/<%= workorder.id %>"><%= workorder.content %></a></p>
+            </div>
+        <% end %>
+    </div>
+</div>
