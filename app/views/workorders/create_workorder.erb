@@ -2,7 +2,10 @@
   <div class="content ml-5">
     <h2 class="mb-5">Add a Workorder</h2>
     <form action="/workorders" method="POST">
-      <p>Description: <input type="textarea" name="content"></p>
+        <p>Workorder Name: <input type="text" name="name" id="name"></p>
+        <p>Multiplier: <input type="number" name="multiplier" id="multiplier"></p>
+        <p>Hours Needed<input type="number" name="hours_needed" id="hours_needed"></p>
+        <p>Description: <input type="text" name="description" id="description"></p>
       <input class="btn primary-btn" type="submit" value="submit">
     </form> 
   </div>

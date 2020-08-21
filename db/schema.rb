@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_08_15_220641) do
 
-  create_table "tweets", force: :cascade do |t|
-    t.text "content"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.text "email"
@@ -28,7 +21,10 @@ ActiveRecord::Schema.define(version: 2020_08_15_220641) do
   end
 
   create_table "workorders", force: :cascade do |t|
-    t.text "content"
+    t.text "name"
+    t.text "description"
+    t.integer "multiplier"
+    t.integer "hours_needed"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

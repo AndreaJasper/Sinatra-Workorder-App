@@ -4,7 +4,8 @@
 
     <form action="/workorders/<%= @workorder.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="patch">
-      <h3>Edit Workorder: <input type="text" name="content" id="workorder_content" value="<%= @workorder.content %>"><br></h3>
+      <p><b>Edit Workorder: </b><br>
+      <input type="textarea" name="content" id="workorder_content" value="<%= @workorder.content %>"><br></p>
       
 
       <input type="submit" value="Workorder!" id="submit">
