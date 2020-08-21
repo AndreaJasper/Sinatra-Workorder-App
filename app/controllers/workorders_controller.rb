@@ -18,10 +18,10 @@ class WorkordersController < ApplicationController
     
     post '/workorders' do
       if logged_in?
-        if params[:content] == ""
+        if params[:description] == ""
           redirect to "/workorders/new"
         else
-          @workorder = current_user.workorders.build(content: params[:content])
+          @workorder = current_user.workorders.build(description: params[:description])
           if @workorder.save
             redirect to "/workorders/#{@workorder.id}"
           else
@@ -57,12 +57,12 @@ class WorkordersController < ApplicationController
     
     patch '/workorders/:id' do
       if logged_in?
-        if params[:content] == ""
+        if params[:description] == ""
           redirect to "/workorders/#{params[:id]}/edit"
         else
           @workorder = Workorder.find_by_id(params[:id])
           if @workorder && @workorder.user == current_user
-            if @workorder.update(content: params[:content]) 
+            if @workorder.update(description: params[:description]) 
               redirect to "/workorders/#{@workorder.id}"
             else
               redirect to "/workorders/#{@workorder.id}/edit"

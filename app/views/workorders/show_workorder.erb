@@ -1,8 +1,9 @@
 <div class="col-sm-12">
   <div class="content ml-5">
-  <a class="mb-5" href="/workorders/<%=@workorder.id%>">Back to Home page</a>
+  <a class="mb-5" href="/workorders">Back to Home page</a>
   <h2 class=mb-5>Edit Workorder</h2>
-    <p class="mb-4"><%= @workorder.content %></p>
+    <p class="mb-4"><%= @workorder.description %></p>
+    <p class="mb-4"><%= @workorder.name %></p>
     <a class="btn secondary-btn mb-4" href="/workorders/<%=@workorder.id%>/edit">Edit Workorder </a>
     <form method="POST" action="/workorders/<%=@workorder.id%>/delete">
         <input id="hidden" type="hidden" name="_method" value="DELETE">

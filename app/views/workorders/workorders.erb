@@ -12,7 +12,7 @@
 
     <% @workorders.each do |workorder| %>
       <div>
-        <a href="/workorders/<%= workorder.id %>/edit"><%= workorder.content %></a>
+        <a href="/workorders/<%= workorder.id %>/edit"><%= workorder.name %></a>
       </div>
     <% end %>
     </div>

@@ -5,7 +5,18 @@
     <form action="/workorders/<%= @workorder.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="patch">
       <p><b>Edit Workorder: </b><br>
-      <input type="textarea" name="content" id="workorder_content" value="<%= @workorder.content %>"><br></p>
+
+      <label>Workorder Name: </label>
+      <input type="text" name="name"><br>
+
+      <label>Multiplier: </label>
+      <input type="number" name="multiplier"><br>
+
+      <label>Labour Hours Needed: </label>
+      <input type="number" name="hours_needed"><br>
+      
+      <label>Description: </label>
+      <input type="textarea" name="description" id="description" value="<%= @workorder.description %>"><br></p>
       
 
       <input type="submit" value="Workorder!" id="submit">
