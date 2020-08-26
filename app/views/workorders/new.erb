@@ -2,8 +2,19 @@
   <div class="content ml-5">
     <h2 class="mb-5">Create a new Workorder</h2>
       <form action="/workorders" method="post">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Workorder!" id="submit">
+        <label>Workorder Name: </label>
+        <input type="text" name="name"><br>
+
+        <label>Multiplier: </label>
+        <input type="number" step="any" name="multiplier"><br>
+
+        <label>Labour Hours Needed: </label>
+        <input type="number" name="hours_needed"><br>
+
+        <label>Desription: </label>
+        <input type="text" step="any" name="description" id="description"><br>
+        
+        <input type="submit" value="Submit" id="submit">
       </form>
   </div>
 </div>
