@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_220641) do
   end
 
   create_table "workorders", force: :cascade do |t|
-    t.text "name"
+    t.string "name"
     t.text "description"
     t.integer "multiplier"
     t.integer "hours_needed"

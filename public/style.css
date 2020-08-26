@@ -1,20 +1,17 @@
-html {
-    height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: #93b479;
-    background-repeat:no-repeat;
-    background: -webkit-linear-gradient( to top, #fff, #93b479);
-    background: -moz-linear-gradient( to top, #fff, #93b479);
-    background: -ms-linear-gradient( to top, #fff, #93b479);
-    background: -o-linear-gradient( to top, #fff, #93b479);
-    background: linear-gradient( to top, #fff, #93b479);
+html, body {
+    background: #2b5adc!important;
 }
 
-body {
-    background: transparent!important;
+.intro-page {
+    color: #fff;
+}
+
+.intro-page h1 {
+    font-size: 4em;
+}
+
+.intro-page h2 {
+    font-size: 2em;
 }
 
 a {
@@ -35,7 +32,7 @@ a:hover {
     margin: 0 auto;
     margin-top: 50px;
     background: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 100%;
 }
 
@@ -68,4 +65,15 @@ a.secondary-btn {
 
 a.secondary-btn:hover {
     color: #749160;
+}
+
+a.tertiary-btn {
+    background: #8D7966;
+    color: #fff;
+}
+
+a.tertiary-btn:hover {
+    background: #fff;
+    border: 2px solid #8D7966;
+    color: #000;
 }

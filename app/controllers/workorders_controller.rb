@@ -21,7 +21,7 @@ class WorkordersController < ApplicationController
         if params[:description] == ""
           redirect to "/workorders/new"
         else
-          @workorder = current_user.workorders.build(description: params[:description])
+          @workorder = current_user.workorders.build(name: params[:name], description: params[:description], multiplier: params[:multiplier])
           if @workorder.save
             redirect to "/workorders/#{@workorder.id}"
           else
@@ -62,7 +62,7 @@ class WorkordersController < ApplicationController
         else
           @workorder = Workorder.find_by_id(params[:id])
           if @workorder && @workorder.user == current_user
-            if @workorder.update(description: params[:description]) 
+            if @workorder.update(name: params[:name], description: params[:description], hours_needed: params[:hours_needed]) 
               redirect to "/workorders/#{@workorder.id}"
             else
               redirect to "/workorders/#{@workorder.id}/edit"

@@ -10,16 +10,16 @@
       <input type="text" name="name"><br>
 
       <label>Multiplier: </label>
-      <input type="number" name="multiplier"><br>
+      <input type="number" step="any" name="multiplier"><br>
 
       <label>Labour Hours Needed: </label>
-      <input type="number" name="hours_needed"><br>
+      <input type="number" step="any" name="hours_needed"><br>
       
       <label>Description: </label>
       <input type="textarea" name="description" id="description" value="<%= @workorder.description %>"><br></p>
       
 
-      <input type="submit" value="Workorder!" id="submit">
+      <input type="submit" value="Update" id="submit">
     </form>
   </div>
 </div>
