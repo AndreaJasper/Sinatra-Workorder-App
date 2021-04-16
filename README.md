@@ -1,4 +1,6 @@
-# Fwitter Group Project
+# Workd Order APP
+
+# CURRENTLY BEING UPDATED TO RAILS
 
 ## Objectives
 
