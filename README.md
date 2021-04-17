@@ -1,6 +1,7 @@
 # Workd Order APP
 
 # *CURRENTLY BEING UPDATED TO RAILS*
+*[Repo for the update can be found here](https://github.com/AndreaJasper/Workorder-App)*
 
 ## Objectives
 
