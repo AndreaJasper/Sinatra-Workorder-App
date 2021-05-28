@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Andrea Jasper">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Worder</title>
+    <!-- STYLE.CSS -->
+    <link href="<%= url('css/style.css') %>" rel="stylesheet" type="text/css" />
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="<%= url('css/bootstrap.css') %>" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-color fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="#">Worder</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item mx-3">
+              <% if logged_in? %>
+                <a class="nav-link btn home-btn mr-2" href="/logout">Logout</a>
+              <% else %>
+                <a class="nav-link btn home-btn mr-2" href="/login">Login</a>
+              <% end %>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link btn home-btn-2" href="/signup">Sign Up</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+  </header>
+  <main>
+
+    <%= yield %>
+
+</main>
+<footer>
+
+</footer>
+
+<!-- Main JS Fil -->
+<script src="js/main.js"></script>
+
+
+  <!-- BOOTSTRAP SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="../assets/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="js/dashboard.js"></script>
+
+
+  </body>
+</html>

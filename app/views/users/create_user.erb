@@ -1,0 +1,20 @@
+<section id="create-user">
+  <div class="container">
+    <h2 class="mb-4">
+      <% unless locals.empty? %>
+        <%= message %>
+      <% end %>
+    </h2>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <form action="/signup" method="POST">
+          <input class="form-control mb-3" type="text" name="username" id="username" placeholder="Username">
+          <input class="form-control mb-3" type="password" name="password" id="password" placeholder="Password">
+          <input class="form-control mb-3" type="text" name="email" id="email" placeholder="Email">
+          <input class="form-control mb-3" type="submit" value="Sign Up" id="submit">
+        </form>
+      </div><!-- end col -->
+    </div><!-- end row -->
+  </div><!-- end container -->
+</section>

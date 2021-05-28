@@ -1,0 +1,20 @@
+<div class="col-sm-12 white-bg mt-5">
+  <div class="content ml-5">
+    <h2 class="mb-5">Create a new Workorder</h2>
+    <form action="/workorders" method="POST">
+      <label>Workorder Name: </label>
+      <input type="text" name="name"><br>
+
+      <label>Multiplier: </label>
+      <input type="number" step="any" name="multiplier"><br>
+
+      <label>Labour Hours Needed: </label>
+      <input type="number" step="any" name="hours_needed"><br>
+
+      <label>Description: </label>
+      <input type="textarea" name="description"><br>
+
+      <input class="btn primary-btn" type="submit" value="submit">
+    </form> 
+  </div>
+</div>

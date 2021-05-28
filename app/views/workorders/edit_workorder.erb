@@ -1,0 +1,25 @@
+<div class="col-sm-12 white-bg mt-5">
+  <div class="content ml-5">
+    <h2 class="mb-5">Edit Your Workorder</h2>
+
+    <form action="/workorders/<%= @workorder.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+      <p><b>Edit Workorder: </b><br>
+
+      <label>Workorder Name: </label>
+      <input type="text" name="name" value="<%= @workorder.name %>"><br>
+
+      <label>Multiplier: </label>
+      <input type="number" step="any" name="multiplier" value="<%= @workorder.multiplier %>"><br>
+
+      <label>Labor Hours Needed: </label>
+      <input type="number" step="any" name="hours_needed" value="<%= @workorder.hours_needed %>"><br>
+      
+      <label>Description: </label>
+      <input type="textarea" name="description" id="description" value="<%= @workorder.description %>"><br></p>
+      
+
+      <input type="submit" value="Update" id="submit">
+    </form>
+  </div>
+</div>

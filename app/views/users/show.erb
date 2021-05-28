@@ -1,0 +1,13 @@
+<div class="col-sm-12 white-bg mt-5">
+    <div class="content ml-5">
+
+        <h2 class="mb-5">Welcome, <%= @user.username %></h2>
+
+
+        <% @user.workorders.each do |workorder| %>
+            <div>
+                <p><a href="/workorders/<%= workorder.id %>"><%= workorder.name %></a></p>
+            </div>
+        <% end %>
+    </div>
+</div>

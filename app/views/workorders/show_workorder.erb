@@ -1,0 +1,15 @@
+<div class="col-sm-12 white-bg mt-5">
+  <div class="content ml-5">
+  <a class="mb-5" href="/workorders">Back to Home page</a>
+  <h2 class=mb-5>Workorder: <%= @workorder.name %></h2>
+    <p class="mb-0"><b>Multiplier:</b> <%= @workorder.multiplier %></p>
+    <p class="mb-0"><b>Labor Hours:</b> <%= @workorder.hours_needed %></p>
+    <p><b>Description:</b> <%= @workorder.description %></p>
+    <a class="btn secondary-btn mb-4" href="/workorders/<%=@workorder.id%>/edit">Edit Workorder </a>
+    <a class="btn tertiary-btn mb-4" href="/workorders/new">Create Workorder </a>
+    <form method="POST" action="/workorders/<%=@workorder.id%>/delete">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete" class="delete">
+    </form>
+  </div>
+</div>
