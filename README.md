@@ -72,4 +72,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Andrea
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/AndreaJasper/Sinatra-Work-Order-App/blob/master/LICENSE.md) file for details
