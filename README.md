@@ -1,5 +1,7 @@
 # Work Order Management
 
+An app that allows you to create and manage work orders.
+
 ## Installing
 
 How to install and run this app.
