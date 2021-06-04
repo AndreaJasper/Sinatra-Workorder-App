@@ -98,13 +98,13 @@
               <th>Name</th>
               <th>Multiplier</th>
               <th>Labor Hours</th>
-              <th>Description</th>
+              <%# <th>Description</th> %>
             </tr>
           </thead>
           <tbody>
             <% @workorders.each do |workorder| %>
               <tr>
-                <td>1,001</td>
+                <td><%= workorder.id %></td>
                 <td>
                   <a href="/workorders/<%= workorder.id %>"><%= workorder.name %>
                 </td>
@@ -114,9 +114,9 @@
                 <td>
                     <%= workorder.hours_needed %>
                 </td>
-                <td>
+                <%# <td>
                     <%= workorder.description %>
-                </td>
+                <%# </td> %>
               </tr>
             <% end %>
           </tbody>
@@ -125,4 +125,3 @@
     </main>
   </div>
 </div>
- 

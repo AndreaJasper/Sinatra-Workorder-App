@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Andrea Jasper">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Worder</title>
+    <title>Work Order App</title>
     <!-- STYLE.CSS -->
     <link href="<%= url('css/style.css') %>" rel="stylesheet" type="text/css" />
 
@@ -18,7 +18,7 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-color fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand logo" href="#">Worder</a>
+          <a class="navbar-brand logo" href="/workorders">Work Order App</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,9 +31,9 @@
                 <a class="nav-link btn home-btn mr-2" href="/login">Login</a>
               <% end %>
               </li>
-              <li class="nav-item mx-3">
+              <%# <li class="nav-item mx-3">
                 <a class="nav-link btn home-btn-2" href="/signup">Sign Up</a>
-              </li>
+              </li> %>
             </ul>
 
           </div>
@@ -46,7 +46,9 @@
 
 </main>
 <footer>
-
+  <div class="container">
+    <p class="text-center">&copy;<script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script>, Work Order App.</p>
+  </div>
 </footer>
 
 <!-- Main JS Fil -->

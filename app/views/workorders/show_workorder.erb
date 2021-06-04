@@ -1,15 +1,132 @@
-<div class="col-sm-12 white-bg mt-5">
-  <div class="content ml-5">
-  <a class="mb-5" href="/workorders">Back to Home page</a>
-  <h2 class=mb-5>Workorder: <%= @workorder.name %></h2>
-    <p class="mb-0"><b>Multiplier:</b> <%= @workorder.multiplier %></p>
-    <p class="mb-0"><b>Labor Hours:</b> <%= @workorder.hours_needed %></p>
-    <p><b>Description:</b> <%= @workorder.description %></p>
-    <a class="btn secondary-btn mb-4" href="/workorders/<%=@workorder.id%>/edit">Edit Workorder </a>
-    <a class="btn tertiary-btn mb-4" href="/workorders/new">Create Workorder </a>
-    <form method="POST" action="/workorders/<%=@workorder.id%>/delete">
-        <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete" class="delete">
-    </form>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="/workorders">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Pending
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Closed
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>-->
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Workorder: <%= @workorder.name %></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-secondary mr-2"><a href="/workorders/new">Create Workorder</a></button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+      <!--
+        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      -->
+
+      <!-- <h2>Current Workorders</h2>-->
+      <div class="table-responsive">
+        <div class="col-sm-12 white-bg mt-5">
+          <div class="content ml-5">
+                          <div class="row mb-3">
+                <div class="col-sm-2"><strong>Multiplier</strong></div>
+                <div class="col-sm-6">
+                  <p><%= @workorder.multiplier %></p>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-2"><strong>Labor Hours</strong></div>
+                <div class="col-sm-6">
+                   <p><%= @workorder.hours_needed %></p>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-2"><strong>Description</strong></div>
+                <div class="col-sm-6">
+                  <p><%= @workorder.description %></p>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-1">
+                  <a class="btn btn-main mb-4" href="/workorders/<%=@workorder.id%>/edit">Edit Workorder </a>
+                </div>
+                <div class="col-sm-1">
+                    <form method="POST" action="/workorders/<%=@workorder.id%>/delete">
+                    <input id="hidden" type="hidden" name="_method" value="DELETE">
+                    <input type="submit" value="Delete" class="delete btn btn-danger">
+                  </form>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </div>
+
+

@@ -1,20 +1,129 @@
-<div class="col-sm-12 white-bg mt-5">
-  <div class="content ml-5">
-    <h2 class="mb-5">Create a new Workorder</h2>
-    <form action="/workorders" method="POST">
-      <label>Workorder Name: </label>
-      <input type="text" name="name"><br>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="/workorders">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Pending
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Closed
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>-->
+        </ul>
 
-      <label>Multiplier: </label>
-      <input type="number" step="any" name="multiplier"><br>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-      <label>Labour Hours Needed: </label>
-      <input type="number" step="any" name="hours_needed"><br>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Create Workorder</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-secondary mr-2"><a href="/workorders/new">Create Workorder</a></button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+      <!--
+        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      -->
 
-      <label>Description: </label>
-      <input type="textarea" name="description"><br>
-
-      <input class="btn primary-btn" type="submit" value="submit">
-    </form> 
+      <!-- <h2>Current Workorders</h2>-->
+      <div class="table-responsive">
+        <div class="col-sm-12 white-bg mt-5">
+          <div class="content ml-5">
+            <form action="/workorders" method="POST">
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><strong>Workorder Name</strong></label>
+                <div class="col-sm-6">
+                  <input type="text" name="name" class="col-lg-6">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><strong>Multiplier</strong></label>
+                <div class="col-sm-6">
+                  <input type="number" step="any" name="multiplier" class="col-lg-6">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><strong>Labor Hours Needed</strong></label>
+                <div class="col-sm-6">
+                  <input type="number" step="any" name="hours_needed" class="col-lg-6">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><strong>Description</strong></label>
+                <div class="col-sm-10 col-lg-6">
+                  <textarea class="form-control" aria-label="With textarea" type="textarea" name="description" rows="3"></textarea>
+                </div>
+              </div>
+              <input class="btn btn-main" type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </div>
+
